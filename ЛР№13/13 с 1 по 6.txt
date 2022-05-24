@@ -1,0 +1,127 @@
+Задание 1
+
+let groceries = ['чай', 'шпроты', 'печенье', 'сахар', 'чипсы'];
+let shoppingList = '';
+for (let i=0; i<=groceries.length-2; i++){
+    shoppingList=shoppingList+groceries[i] +', ';
+}
+shoppingList = shoppingList + groceries[groceries.length-1];
+alert(shoppingList);
+
+Задание 2
+
+let numbers = [6, 1, 3, 54, 15, 1, 2];
+let number = 1;
+let lastIndex = 0;
+
+for (let i = 0; i <= numbers.length - 1; i++) {
+  if (numbers[i] == number) {
+    lastIndex = i;
+  } else if (numbers[i] !== number && lastIndex === 0) {
+    lastIndex = -1;
+  }
+}
+
+for (let j = numbers.length - 1; j > 0; j--) {
+    for (let i = 0; i < j; i++) {
+      if (numbers[i] > numbers[i + 1]) {
+        let er = numbers[i];
+        numbers[i] = numbers[i + 1];
+        numbers[i + 1] = er;
+      }
+    }
+  }
+alert(lastIndex+"      "+numbers)
+
+Задание 3
+
+let salary = prompt("Введите зарплату до вычета налогов : ");
+let calculateSalary = function () {
+    if (salary < 100000){
+        result = salary - ((salary/100)*45);
+        return result;
+    }
+    else{
+        result = salary - ((salary/100)*35);
+        return result;
+    }
+};
+alert(Math.round(calculateSalary()));
+
+Задание 4
+
+var getPrice = function (hours, urgency) {
+  let price = 1500;
+  if (urgency) {
+    price *= 2.5;
+    hours /= 2;
+  }
+  if (hours > 150) {
+    price -= 250;
+  }
+  return hours * price;
+}
+let h = prompt("Введите часы : ");
+alert("Итоговая цена " + getPrice(h,true))
+
+Задание 5
+
+let list_main = [
+ {
+ name: 'Петя',
+ age: 5
+ },
+ {
+ name: 'Лёля',
+ age: 2
+ },
+ {
+ name: 'Сима',
+ age: 3
+ }
+];
+
+let  getSortList = function (list) {
+  
+    for (let i = 0; i<=list.length-1; i++){
+    for(let a=0; a<=list.length-i-2; a++){
+        if(list[a].age > list[a+1].age){
+            let result = list[a];
+            list[a] = list[a+1];
+            list[a+1]= result
+        }
+      }
+    }
+    return list
+  }
+getSortList(list_main);
+      
+Задание 6
+
+let key = ['имя', 'любимый цвет', 'любимое блюдо'];
+let value = [
+ ['Василий', 'красный', 'борщ'],
+ ['Мария'],
+ ['Иннокентий', 'жёлтый', 'пельмени', '18', 'Азовское']
+];
+
+let getList = function(whisKey, whisValue)
+{
+  let result = [];
+  for(let i = 0; i < whisValue.length; i++)
+  {
+    let obj = {};
+    let min = Math.min(whisKey.length, whisValue[i].length); 
+    for(let j = 0; j < min; j++)
+    {
+      obj[whisKey[j]] = whisValue[i][j];
+    }
+    result.push(obj);
+  }
+  return result;
+}
+
+alert(getList(key, value))
+
+
+
