@@ -1,0 +1,116 @@
+Задание 1
+
+var age = prompt('Сколько лет собаке? ', 5);
+var ageGroup;
+
+if (age <= 1) {
+console.log(ageGroup = 'Щенки');
+}
+
+if (age >1 && age <=3) {
+console.log(ageGroup = 'Молодые собаки');
+}
+
+if (age >3 && age <=7) {
+console.log(ageGroup = 'Собака средних лет');
+}
+
+if (age >7) {
+console.log(ageGroup = 'Почтенные таксоны');
+}
+
+Задание 2
+
+var temperature = 20;
+var isRaining = false;
+var minutes = 0;
+
+// 1 решение
+
+if (isRaining) {
+  minutes = 0;
+  } else if (temperature >= 10 && temperature < 15) {
+      minutes = 30; 
+  } else if (temperature >= 15 && temperature < 25) {
+      minutes = 40; 
+  } else if (temperature >= 25 && temperature <= 35) {
+      minutes = 20; 
+} 
+console.log("Прогулка продлится "+ minutes +" минут")
+
+ // 2  решение
+
+var temperature = 20;
+var itsRaining = false;
+
+var minutes;
+   
+  if (itsRaining || (temperature < 0) || (temperature > 35)) {
+  minutes = 0;
+} else if (temperature == 20) {
+  minutes = 20;
+} else  {
+  minutes = 20 - Math.abs((temperature-20));
+}
+alert("Прогулка продлится "+ minutes +" минут");
+
+Задание 3
+
+let time = prompt("Введите текущее время : ");
+let goDairy = false;
+let goStore = false;
+let goMarket = false;
+if (((time>=8) && (time < 13)) || ((time > 14) &&(time <=19))){
+    goToDairy = true;
+    alert("Нужно идти в магазин");
+}else if (((time>=9) && (time < 14)) || ((time > 15) &&(time <=17))){
+     goToStore = true;
+    alert("Нужно идти на фабрику");
+}else if ((time>=7) && (time <= 20)){
+    goToMarket = true;
+    alert("Нужно идти на рынок");
+}else{
+  alert("Уже все закрыто, сходите завтра")
+}
+
+Задание 4
+
+let time = prompt("Введите текущее время : ");
+let goDairy = false;
+let goStore = false;
+let goMarket = false;
+if (((time>=8) && (time < 13)) || ((time > 14) &&(time <=19))){
+    goToDairy = true;
+    alert("Нужно идти в магазин");
+}else if (((time>=9) && (time < 14)) || ((time > 15) &&(time <=17))){
+     goToStore = true;
+    alert("Нужно идти на фабрику");
+}else if ((time>=7) && (time <= 20)){
+    goToMarket = true;
+    alert("Нужно идти на рынок");
+}else{
+  alert("Уже все закрыто, сходите завтра")
+}
+
+Задание 5
+
+var number = prompt("Введите любое число для работы программы ");
+var quantity = 0;
+
+for (i = 1; number >= 1; i++) {
+  number /= 10;
+  quantity = i;
+}
+alert("Колличество символов в числе: " + quantity);
+
+
+Задание 6
+
+var poly = prompt("Введите число для работы программы ");
+if(poly == poly.split('').reverse().join('')){
+  alert(poly + " это палиндром")
+}else{
+  alert(poly + " это не палиндром")
+}
+
+
